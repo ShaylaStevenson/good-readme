@@ -54,9 +54,9 @@ const questions = (data) =>
     },
     {
         type: 'list',
-        name: 'License',
+        name: 'license',
         message: 'Please choose one LICENSE for project',
-        choices: ['MIT', 'OTHER', 'OTHER']
+        choices: ['MIT', 'Apache-2.0', 'BSD-2-clause']
     },
 ]);
 
@@ -76,6 +76,7 @@ const init = () => {
                 console.log(error);
             }
         });
+        
     };
     
 

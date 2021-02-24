@@ -1,24 +1,26 @@
 
-  # Test
-  * description test
+# other ![badge-image](https://img.shields.io/static/v1?label=license&message=BSD-2-clause&color=blue)
+  
 
-  ## Table of Contents
-  * [Installation,Usage,Contributing,Tests,License,Questions](#Installation,Usage,Contributing,Tests,License,Questions)
 
-  ## Installation
-  * step 1 and step 2
+## Table of Contents
+[](#)
 
-  ## Usage
-  * here is an example
+## Installation
+   
 
-  ## Contributing
-  * people
+## Usage
+   
 
-  ## Tests
-  * none
+## Contributing
+   
 
-  ## Questions
-  * just call
+## Tests
+   
 
-  ## License
-  * undefined
+## Questions
+   
+
+## License
+    This project is licensed under the terms of the BSD-2-clause license. View license at:
+    [https://opensource.org/licenses/BSD-2-clause](#https://opensource.org/licenses/BSD-2-clause).
