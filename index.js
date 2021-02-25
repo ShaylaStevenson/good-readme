@@ -23,8 +23,7 @@ const questions = (data) =>
         type: 'checkbox',
         name: 'tableOfContents',
         message: 'Please select which SECTIONS to include in your table of contents.',
-        choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'Questions', 'License'],
-        
+        choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'Questions', 'License'], 
     },   
     {
         type: 'input',
@@ -53,7 +52,7 @@ const questions = (data) =>
     {
         type: 'input',
         name: 'questions',
-        message: 'How can people get in touch to ask QUESTIONS?',
+        message: 'Give people a way to reach out with QUESTIONS. What is your GITHUB USERNAME?',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {

@@ -1,16 +1,17 @@
-// TODO: Create a function that returns a license badge based on which license is passed in
-// If there is no license, return an empty string
+// function that returns a license badge from shields.io based on which license is passed in
+// If there is no license, returns an empty string
 function renderLicenseBadge(license) {
    if (license !== '') {
      var badgeURL = `https://img.shields.io/static/v1?label=license&message=${license}&color=blue`;
+     var badgeMd = `![badge-image](${badgeURL})`;
    } else {
-     badgeURL = '';
+     badgeMd = '';
    }
-   return badgeURL;
+   return badgeMd;
 }
 
-// TODO: Create a function that returns the license link
-// If there is no license, return an empty string
+// function that returns the license link @ opensource.org
+// If there is no license, returns an empty string
 function renderLicenseLink(license) {
   if (license !== '') {
     var licenseURL = `https://opensource.org/licenses/${license}`;
@@ -20,12 +21,12 @@ function renderLicenseLink(license) {
   return licenseURL;
 }
 
-// TODO: Create a function that returns the license section of README
-// If there is no license, return an empty string
+// function that returns the license section of README
+// If there is no license, returns an empty string
 function renderLicenseSection(license, licenseURL) {
   if (license !== '') {
-    var licenseContent = 
-      `## License
+    var licenseContent = `
+  ## License
   This project is licensed under the terms of the ${license} license. View license at:
   ${licenseURL}.`;
     
@@ -35,24 +36,30 @@ function renderLicenseSection(license, licenseURL) {
   return licenseContent;  
 }
 
-// TODO: Create a function to generate markldown for README
+// function to generate markdown for README
 function generateMarkdown(data, license) {
 
+  // save the array of selected selections to a string
   var chosenSections = data.tableOfContents;
 
+  //if the substring 'installation' is found in the string:
   if (chosenSections.indexOf('Installation') !=-1) {
+    //create section contents 
     let sectionHead = 'Installation';
     let sectionContent = data.installation;
     var installationSection = `
   ## ${sectionHead}
   ${sectionContent}`;
+    //create table of contents line with internal link
     var tocInstallation = `
   * [Installation](#Installation)`;
+  //if the section is not selected, then return empty strings
   } else {
     installationSection = '';
     tocInstallation = '';
   };
 
+  //check for 'Usage' selection
   if (chosenSections.indexOf('Usage') !=-1) {
     let sectionHead = 'Usage';
     let sectionContent = data.usage;
@@ -66,6 +73,7 @@ function generateMarkdown(data, license) {
     tocUsage = '';
   };
 
+  //check for 'Contributing' selection
   if (chosenSections.indexOf('Contributing') !=-1) {
     let sectionHead = 'Contributing';
     let sectionContent = data.contributing;
@@ -79,6 +87,7 @@ function generateMarkdown(data, license) {
     tocContributing = '';
   };
 
+  //check for 'Tests' selection
   if (chosenSections.indexOf('Tests') !=-1) {
     let sectionHead = 'Tests';
     let sectionContent = data.tests;
@@ -92,6 +101,7 @@ function generateMarkdown(data, license) {
     tocTests = '';
   };
 
+  //check for 'Questions' selection
   if (chosenSections.indexOf('Questions') !=-1) {
     let sectionHead = 'Questions';
     let sectionContent = data.questions;
@@ -105,22 +115,24 @@ function generateMarkdown(data, license) {
     tocQuestions = '';
   };
 
+  //check for 'License' selection
   if (chosenSections.indexOf('License') !=-1) {
     var license = data.license;
     var licenseLink = renderLicenseLink(license);
-    var badgeLink = renderLicenseBadge(license);
+    var badgeImg = renderLicenseBadge(license);
     var licenseSection = renderLicenseSection(license, renderLicenseLink(license));
     var tocLicense = `
   * [License](#License)`;
   } else {
     licenseSection = '';
-    badgeLink = '';
+    badgeImg = '';
     tocLicense = '';
 
   };
 
+//call data and created sections to create the markdown
   return `
-# ${data.title} ![badge](${badgeLink})  
+# ${data.title} ${badgeImg}  
 ${data.description}
 
 ## Table of Contents
