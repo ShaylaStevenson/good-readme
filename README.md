@@ -16,7 +16,7 @@ Create a professional readme file for your project in a few simple steps using G
   * [License](#License)
 
   ## Installation
-  To install Good README, you must first 'git clone' the repo's URL at [good-readme repo](git@github.com:ShaylaStevenson/good-readme.git). Next you will need to install the required packages by typing 'npm i' into the command line.
+  To install Good README, you must first 'git clone' the repo's URL from the [Good README repository](https://github.com/ShaylaStevenson/good-readme). Next you will need to install the required packages by typing 'npm i' into the command line.
 
   ## Usage
   To use the application, open your terminal to the main directory of the good-readme file. Next, type 'node index.js'. You will then be greeted with a series of prompts to answer with details about your project. Once the prompts have completed, you will find your newly created readme file in the main directory. 
@@ -34,7 +34,7 @@ Create a professional readme file for your project in a few simple steps using G
   * Github Username: ShaylaStevenson
   * [View Github Profile](https://github.com/ShaylaStevenson)
   * Email: shayla.rose.stevenson@gmail.com
-  * You can also reach me through my LinkedIn account at https://www.linkedin.com/in/shayla-stevenson-806143200/.
+  * You can also reach me through my [LinkedIn account](https://www.linkedin.com/in/shayla-stevenson-806143200/) .
 
   ## License
   This project is licensed under the terms of the MIT license. View license at:
