@@ -33,7 +33,7 @@ Create a professional readme file for your project in a few simple steps using G
   [![Demo Image](assets/images/demo-image.png)](https://drive.google.com/file/d/1jYpNIZur5sJ8BC0xd4WncFfqOmGCcqTi/view "Demo Video")
 
   ## Technologies
-  * License badged created using [Shields.io](https://shields.io/)
+  * License badges created using [Shields.io](https://shields.io/)
   * Licenses sourced from [Opensource.org](https://opensource.org/)
   * Demo video made using [Screencastify.com](https://www.screencastify.com/)
 
