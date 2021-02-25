@@ -16,8 +16,12 @@ Create a professional readme file for your project in a few simple steps using G
   * [License](#License)
 
   ## Installation
-  To install Good README, you must first 'git clone' the repo's URL from the [Good README repository](https://github.com/ShaylaStevenson/good-readme). Next you will need to install the required packages by typing 'npm i' into the command line.
+  To install Good README, you must first enter
+  * git clone git@github.com:ShaylaStevenson/good-readme.git
 
+  into your terminal. Next you will need to install the required packages by entering
+  * npm i
+  
   ## Usage
   To use the application, open your terminal to the main directory of the good-readme file. Next, type 'node index.js'. You will then be greeted with a series of prompts to answer with details about your project. Once the prompts have completed, you will find your newly created readme file in the main directory. 
 
