@@ -10,8 +10,8 @@ const questions = (data) =>
     {
         type: 'input',
         name: 'title',
-        default: 'Project Title',
-        message: 'What is the TITLE of your project?'
+        message: 'What is the TITLE of your project?',
+        default: 'Project Title'
     },
     {
         type: 'input',
@@ -25,39 +25,43 @@ const questions = (data) =>
         message: 'Please select which SECTIONS to include in your table of contents.',
         choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'Questions', 'License'],
         
-    },
+    },   
     {
         type: 'input',
         name: 'installation',
         message: 'What are the steps required for INSTALLATION of your project?',
+        when: (data) => data.tableOfContents.indexOf('Installation') !=-1
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'List any instructions or examples for USAGE?'
+        message: 'List any instructions or examples for USAGE?',
+        when: (data) => data.tableOfContents.indexOf('Usage') !=-1
     },
     {
         type: 'input',
         name: 'contributing',
         message: 'List the Github URL(s) of any CONTRIBUTING members.',
-
+        when: (data) => data.tableOfContents.indexOf('Contributing') !=-1
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Include relevent TESTS.'
-
+        message: 'Include relevent TESTS.',
+        when: (data) => data.tableOfContents.indexOf('Tests') !=-1
     },
     {
         type: 'input',
         name: 'questions',
-        message: 'How can people get in touch to ask QUESTIONS?'
+        message: 'How can people get in touch to ask QUESTIONS?',
+        when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {
         type: 'list',
         name: 'license',
         message: 'Please choose one LICENSE for project',
-        choices: ['MIT', 'Apache-2.0', 'BSD-2-clause']
+        choices: ['MIT', 'Apache-2.0', 'BSD-2-clause'],
+        when: (data) => data.tableOfContents.indexOf('License') !=-1
     },
 ]);
 
@@ -77,7 +81,6 @@ const init = () => {
                 console.log(error);
             }
         });
-
     };
     
 
