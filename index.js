@@ -10,19 +10,20 @@ const questions = (data) =>
     {
         type: 'input',
         name: 'title',
+        default: 'Project Title',
         message: 'What is the TITLE of your project?'
     },
     {
         type: 'input',
         name: 'description',
         message: 'Provide a brief DESCRIPTION of your project.',
-        
+        default: 'Project description'
     },
     {
         type: 'checkbox',
         name: 'tableOfContents',
         message: 'Please select which SECTIONS to include in your table of contents.',
-        choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'License', 'Questions',],
+        choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'Questions', 'License'],
         
     },
     {
@@ -76,7 +77,7 @@ const init = () => {
                 console.log(error);
             }
         });
-        
+
     };
     
 

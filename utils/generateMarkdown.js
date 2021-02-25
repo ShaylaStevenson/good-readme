@@ -4,7 +4,7 @@ function renderLicenseBadge(license) {
    if (license !== '') {
      var badgeURL = `https://img.shields.io/static/v1?label=license&message=${license}&color=blue`;
    } else {
-     var badgeURL = '';
+     badgeURL = '';
    }
    return badgeURL;
 }
@@ -15,7 +15,7 @@ function renderLicenseLink(license) {
   if (license !== '') {
     var licenseURL = `https://opensource.org/licenses/${license}`;
   } else {
-    var licenseURL = '';
+    licenseURL = '';
   }
   return licenseURL;
 }
@@ -37,32 +37,109 @@ function renderLicenseSection(license, licenseURL) {
 
 // TODO: Create a function to generate markldown for README
 function generateMarkdown(data, license) {
-  var license = data.license;
-  var licenseLink = renderLicenseLink(license);
-  var badgeLink = renderLicenseBadge(license);
-  var licenseSection = renderLicenseSection(license, renderLicenseLink(license));
-  
+
+  var chosenSections = data.tableOfContents;
+
+  if (chosenSections.indexOf('Installation') !=-1) {
+    let sectionHead = 'Installation';
+    let sectionContent = data.installation;
+    var installationSection = `
+  ## ${sectionHead}
+  ${sectionContent}`;
+    var tocInstallation = `
+  * [Installation](#Installation)`;
+  } else {
+    installationSection = '';
+    tocInstallation = '';
+  };
+
+  if (chosenSections.indexOf('Usage') !=-1) {
+    let sectionHead = 'Usage';
+    let sectionContent = data.usage;
+    var usageSection = `
+  ## ${sectionHead}
+  ${sectionContent}`;
+    var tocUsage = `
+  * [Usage](#Usage)`;
+  } else {
+    usageSection = '';
+    tocUsage = '';
+  };
+
+  if (chosenSections.indexOf('Contributing') !=-1) {
+    let sectionHead = 'Contributing';
+    let sectionContent = data.contributing;
+    var contributingSection = `
+  ## ${sectionHead}
+  ${sectionContent}`;
+    var tocContributing = `
+  * [Contributing](#Contributing)`;
+  } else {
+    contributingSection = '';
+    tocContributing = '';
+  };
+
+  if (chosenSections.indexOf('Tests') !=-1) {
+    let sectionHead = 'Tests';
+    let sectionContent = data.tests;
+    var testsSection = `
+  ## ${sectionHead}
+  ${sectionContent}`;
+    var tocTests = `
+  * [Tests](#Tests)`;
+  } else {
+    testsSection = '';
+    tocTests = '';
+  };
+
+  if (chosenSections.indexOf('Questions') !=-1) {
+    let sectionHead = 'Questions';
+    let sectionContent = data.questions;
+    var questionsSection = `
+  ## ${sectionHead}
+  ${sectionContent}`;
+    var tocQuestions = `
+  * [Questions](#Questions)`;
+  } else {
+    questionsSection = '';
+    tocQuestions = '';
+  };
+
+  if (chosenSections.indexOf('License') !=-1) {
+    var license = data.license;
+    var licenseLink = renderLicenseLink(license);
+    var badgeLink = renderLicenseBadge(license);
+    var licenseSection = renderLicenseSection(license, renderLicenseLink(license));
+    var tocLicense = `
+  * [License](#License)`;
+  } else {
+    licenseSection = '';
+    badgeLink = '';
+    tocLicense = '';
+
+  };
+
   return `
-# ${data.title} ![badge-image](${badgeLink})  
+# ${data.title} ![badge](${badgeLink})  
 ${data.description}
 
 ## Table of Contents
-[${data.tableOfContents}](#${data.tableOfContents})
+${tocInstallation}
+${tocUsage}
+${tocContributing}
+${tocTests}
+${tocQuestions}
+${tocLicense}
 
-## Installation
-   ${data.installation}
+${installationSection}
 
-## Usage
-   ${data.usage}
+${usageSection}
 
-## Contributing
-   ${data.contributing}
+${contributingSection}
 
-## Tests
-   ${data.tests}
+${testsSection}
 
-## Questions
-   ${data.questions}
+${questionsSection}
 
 ${licenseSection}
 `;
