@@ -40,7 +40,7 @@ const questions = (data) =>
     {
         type: 'input',
         name: 'contributing',
-        message: 'List the Github URL(s) of any CONTRIBUTING members.',
+        message: 'List the Github profile links of any CONTRIBUTING members.',
         when: (data) => data.tableOfContents.indexOf('Contributing') !=-1
     },
     {
@@ -51,8 +51,26 @@ const questions = (data) =>
     },
     {
         type: 'input',
+        name: 'githubName',
+        message: 'What is your GITHUB USERNAME',
+        when: (data) => data.tableOfContents.indexOf('Questions') !=-1
+    },
+    {
+        type: 'input',
+        name: 'githubURL',
+        message: 'What is your GITHUB PROFILE LINK?',
+        when: (data) => data.tableOfContents.indexOf('Questions') !=-1
+    },
+    {
+        type: 'input',
+        name: 'email',
+        message: 'What is your professional EMAIL?',
+        when: (data) => data.tableOfContents.indexOf('Questions') !=-1
+    },
+    {
+        type: 'input',
         name: 'questions',
-        message: 'Give people a way to reach out with QUESTIONS. What is your GITHUB USERNAME?',
+        message: 'Include special instructions or additional ways for people to ask QUESTIONS.',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {

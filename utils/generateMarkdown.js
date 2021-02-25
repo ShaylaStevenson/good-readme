@@ -79,7 +79,8 @@ function generateMarkdown(data, license) {
     let sectionContent = data.contributing;
     var contributingSection = `
   ## ${sectionHead}
-  ${sectionContent}`;
+  View the Github profiles of contributing members
+  * ${sectionContent}`;
     var tocContributing = `
   * [Contributing](#Contributing)`;
   } else {
@@ -107,7 +108,10 @@ function generateMarkdown(data, license) {
     let sectionContent = data.questions;
     var questionsSection = `
   ## ${sectionHead}
-  ${sectionContent}`;
+  * Github Username: ${data.githubName}
+  * [View Github Profile](${data.githubURL})
+  * Email: ${data.email}
+  * ${sectionContent}`;
     var tocQuestions = `
   * [Questions](#Questions)`;
   } else {
