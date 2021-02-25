@@ -9,67 +9,67 @@ const questions = (data) =>
     {
         type: 'input',
         name: 'title',
-        message: 'What is the TITLE of your project?',
+        message: 'What is the title of your project?',
         default: 'Project Title'
     },
     {
         type: 'input',
         name: 'description',
-        message: 'Provide a brief DESCRIPTION of your project.',
+        message: 'Provide a brief description of your project.',
         default: 'Project description'
     },
     {
         type: 'checkbox',
         name: 'tableOfContents',
-        message: 'Please select which SECTIONS to include in your table of contents.',
+        message: 'Please choose which sections to include in your readme.',
         choices: ['Installation', 'Usage', 'Contributing', 'Tests', 'Questions', 'License'], 
     },   
     {
         type: 'input',
         name: 'installation',
-        message: 'What are the steps required for INSTALLATION of your project?',
+        message: 'What are the steps required for installation of your project?',
         when: (data) => data.tableOfContents.indexOf('Installation') !=-1
     },
     {
         type: 'input',
         name: 'usage',
-        message: 'List any instructions or examples for USAGE?',
+        message: 'List any instructions or examples for usage?',
         when: (data) => data.tableOfContents.indexOf('Usage') !=-1
     },
     {
         type: 'input',
         name: 'contributing',
-        message: 'List the Github profile links of any CONTRIBUTING members.',
+        message: 'List the Github profile links of any contributing members.',
         when: (data) => data.tableOfContents.indexOf('Contributing') !=-1
     },
     {
         type: 'input',
         name: 'tests',
-        message: 'Include relevent TESTS.',
+        message: 'Include relevent tests.',
         when: (data) => data.tableOfContents.indexOf('Tests') !=-1
     },
     {
         type: 'input',
         name: 'githubName',
-        message: 'What is your GITHUB USERNAME',
+        message: 'What is your Github username',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {
         type: 'input',
         name: 'githubURL',
-        message: 'What is your GITHUB PROFILE LINK?',
+        message: 'What is your Github profile link?',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {
         type: 'input',
         name: 'email',
-        message: 'What is your professional EMAIL?',
+        message: 'What is your professional email?',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {
         type: 'input',
         name: 'questions',
-        message: 'Include special instructions or additional ways for people to ask QUESTIONS.',
+        message: 'Include special instructions or additional ways for people to reach out.',
         when: (data) => data.tableOfContents.indexOf('Questions') !=-1
     },
     {
@@ -80,11 +80,6 @@ const questions = (data) =>
         when: (data) => data.tableOfContents.indexOf('License') !=-1
     },
 ]);
-
-// TODO: Create a function to write README file
-function writeToFile(fileName, data) {
-    
-}
 
 // function to initialize app
 const init = () => {

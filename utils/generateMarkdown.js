@@ -76,11 +76,11 @@ function generateMarkdown(data, license) {
   //check for 'Contributing' selection
   if (chosenSections.indexOf('Contributing') !=-1) {
     let sectionHead = 'Contributing';
-    let sectionContent = data.contributing;
+    let sectionContent = `* ${data.contributing}`;
     var contributingSection = `
   ## ${sectionHead}
   View the Github profiles of contributing members
-  * ${sectionContent}`;
+  ${sectionContent}`;
     var tocContributing = `
   * [Contributing](#Contributing)`;
   } else {
@@ -105,13 +105,13 @@ function generateMarkdown(data, license) {
   //check for 'Questions' selection
   if (chosenSections.indexOf('Questions') !=-1) {
     let sectionHead = 'Questions';
-    let sectionContent = data.questions;
+    let sectionContent = `* ${data.questions}`;
     var questionsSection = `
   ## ${sectionHead}
   * Github Username: ${data.githubName}
   * [View Github Profile](${data.githubURL})
   * Email: ${data.email}
-  * ${sectionContent}`;
+  ${sectionContent}`;
     var tocQuestions = `
   * [Questions](#Questions)`;
   } else {
