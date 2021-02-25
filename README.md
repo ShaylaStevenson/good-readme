@@ -23,10 +23,13 @@ Create a professional readme file for your project in a few simple steps using G
   * npm i
   
   ## Usage
-  To use the application, open your terminal to the main directory of the good-readme file. Next, type 'node index.js'. You will then be greeted with a series of prompts to answer with details about your project. Once the prompts have completed, you will find your newly created readme file in the main directory. 
+  To use the application, open your terminal to the main directory of the good-readme file. Next, enter
+  * node index.js
+  
+  You will then be greeted with a series of prompts to answer with details about your project. Once the prompts have completed, you will find your newly created readme file in the main directory. 
 
   ## Demo
-  Click image to view video walkthrough, or see an [example of a developed readme](example-readme.md).
+  Click image to view video walkthrough, or see an [example of a developed readme](EXAMPLE-README.md).
   [![Demo Image](assets/images/demo-image.png)](https://drive.google.com/file/d/14XmptldMx9oT_E3lBxuuuCxjrH0HZEy5/view "Demo Video")
 
   ## Technologies
