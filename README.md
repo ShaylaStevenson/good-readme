@@ -29,7 +29,7 @@ Create a professional readme file for your project in a few simple steps using G
   You will then be greeted with a series of prompts to answer with details about your project. Once the prompts have completed, you will find your newly created readme file in the main directory. 
 
   ## Demo
-  Click image to view video walkthrough, or see an [example of a developed readme](EXAMPLE-README.md).
+  Click image to view video walkthrough, or see an [example of a developed readme](assets/images/EXAMPLE-README.md).
   [![Demo Image](assets/images/demo-image.png)](https://drive.google.com/file/d/1jYpNIZur5sJ8BC0xd4WncFfqOmGCcqTi/view "Demo Video")
 
   ## Technologies
